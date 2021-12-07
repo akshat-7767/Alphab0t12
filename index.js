@@ -3646,7 +3646,7 @@ break
                                     fs.unlinkSync(media)
                                     fs.unlinkSync(ran)
                                 })
-                            .addOutputOptions([`-vcodec`, `libwebp`, `-vf`, `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+                            .addOutputOptions([`-vcodec`, `libwebp`, `-vf`, `scale='min(150,iw)':min'(150,ih)':force_original_aspect_ratio=decrease,fps=15, pad=150:150:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
                             .toFormat('webp')
                             .save(ran)
                     } else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
@@ -3670,7 +3670,7 @@ break
                                     fs.unlinkSync(media)
                                     fs.unlinkSync(ran)
                                 })
-                            .addOutputOptions([`-vcodec`, `libwebp`, `-vf`, `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+                            .addOutputOptions([`-vcodec`, `libwebp`, `-vf`, `scale='min(150,iw)':min'(150,ih)':force_original_aspect_ratio=decrease,fps=15, pad=150:150:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
                             .toFormat('webp')
                             .save(ran)
                     } else if ((isMedia || isQuotedImage) && args[0] == 'nobg') {
@@ -3686,7 +3686,7 @@ break
                             fs.writeFileSync(ranp, bufferir9vn5, (err) => {
                                 if (err) return reply('Gagal, Terjadi kesalahan, silahkan coba beberapa saat lagi.')
                             })
-                            exec(`ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${ranw}`, (err) => {
+                            exec(`ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 150:150 ${ranw}`, (err) => {
                                 fs.unlinkSync(ranp)
                                 if (err) return reply('emror bang')
                                 alpha.sendMessage(from, fs.readFileSync(ranw), sticker, { quoted: mek })
