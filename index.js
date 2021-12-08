@@ -3646,7 +3646,7 @@ break
                                     fs.unlinkSync(media)
                                     fs.unlinkSync(ran)
                                 })
-                            .addOutputOptions([`-vcodec`, `libwebp`, `-vf`, `scale='min(150,iw)':min'(150,ih)':force_original_aspect_ratio=decrease,fps=15, pad=150:150:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+                            .addOutputOptions([`-vcodec`, `libwebp`, `-vf`, `scale='min(190,iw)':min'(190,ih)':force_original_aspect_ratio=decrease,fps=15, pad=190:190:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
                             .toFormat('webp')
                             .save(ran)
                     } else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
@@ -3670,7 +3670,7 @@ break
                                     fs.unlinkSync(media)
                                     fs.unlinkSync(ran)
                                 })
-                            .addOutputOptions([`-vcodec`, `libwebp`, `-vf`, `scale='min(150,iw)':min'(150,ih)':force_original_aspect_ratio=decrease,fps=15, pad=150:150:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+                            .addOutputOptions([`-vcodec`, `libwebp`, `-vf`, `scale='min(190,iw)':min'(190,ih)':force_original_aspect_ratio=decrease,fps=15, pad=190:190:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
                             .toFormat('webp')
                             .save(ran)
                     } else if ((isMedia || isQuotedImage) && args[0] == 'nobg') {
